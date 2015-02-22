@@ -64,7 +64,9 @@ interface CompassHeading {
 }
 
 interface CompassOptions {
+    /** How often to retrieve the compass heading in milliseconds. (Number) (Default: 100) */
     filter?: number;
+    /** The change in degrees required to initiate a watchHeading success callback. When this value is set, frequency is ignored. (Number) */
     frequency?: number;
 }
 
