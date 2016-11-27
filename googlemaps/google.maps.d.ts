@@ -184,7 +184,7 @@ declare namespace google.maps {
         setControlPosition(controlPosition: ControlPosition): void;
         setControls(controls: string[]): void;
         setDrawingMode(drawingMode: string): void;
-        setMap(map: Map): void;
+        setMap(map: Map | null): void;
         setStyle(style: Data.StylingFunction|Data.StyleOptions): void;
         toGeoJson(callback: (feature: Object) => void): void;
     }
@@ -349,14 +349,14 @@ declare namespace google.maps {
         getTitle(): string;
         getVisible(): boolean;
         getZIndex(): number;
-        setAnimation(animation: Animation): void;
+        setAnimation(animation: Animation | null): void;
         setAttribution(attribution: Attribution): void;
         setClickable(flag: boolean): void;
         setCursor(cursor: string): void;
         setDraggable(flag: boolean): void;
         setIcon(icon: string|Icon|Symbol): void;
         setLabel(label: string|MarkerLabel): void;
-        setMap(map: Map|StreetViewPanorama): void;
+		setMap(map: Map | StreetViewPanorama | null): void;
         setOpacity(opacity: number): void;
         setOptions(options: MarkerOptions): void;
         setPlace(place: Place): void;
@@ -648,7 +648,7 @@ declare namespace google.maps {
         getVisible(): boolean;
         setDraggable(draggable: boolean): void;
         setEditable(editable: boolean): void;
-        setMap(map: Map): void;
+		setMap(map: Map | null): void;
         setOptions(options: PolylineOptions): void;
         setPath(path: MVCArray|LatLng[]|LatLngLiteral[]): void; // MVCArray<LatLng>|Array<LatLng|LatLngLiteral>
         setVisible(visible: boolean): void;
@@ -686,7 +686,7 @@ declare namespace google.maps {
         getVisible(): boolean;
         setDraggable(draggable: boolean): void;
         setEditable(editable: boolean): void;
-        setMap(map: Map): void;
+		setMap(map: Map | null): void;
         setOptions(options: PolygonOptions): void;
         setPath(path: MVCArray|LatLng[]|LatLngLiteral[]): void;
         setPaths(paths: MVCArray): void;
@@ -772,7 +772,7 @@ declare namespace google.maps {
         setBounds(bounds: LatLngBounds): void;
         setDraggable(draggable: boolean): void;
         setEditable(editable: boolean): void;
-        setMap(map: Map): void;
+		setMap(map: Map | null): void;
         setOptions(options: RectangleOptions): void;
         setVisible(visible: boolean): void;
     }
@@ -805,7 +805,7 @@ declare namespace google.maps {
         setCenter(center: LatLng|LatLngLiteral): void;
         setDraggable(draggable: boolean): void;
         setEditable(editable: boolean): void;
-        setMap(map: Map): void;
+		setMap(map: Map | null): void;
         setOptions(options: CircleOptions): void;
         setRadius(radius: number): void;
         setVisible(visible: boolean): void;
@@ -849,7 +849,7 @@ declare namespace google.maps {
         getMap(): Map;
         getOpacity(): number;
         getUrl(): string;
-        setMap(map: Map): void;
+		setMap(map: Map | null): void;
         setOpacity(opacity: number): void;
     }
 
@@ -866,7 +866,7 @@ declare namespace google.maps {
         getProjection(): MapCanvasProjection;
         onAdd(): void;
         onRemove(): void;
-        setMap(map: Map|StreetViewPanorama): void;
+		setMap(map: Map | StreetViewPanorama | null): void;
     }
 
     export interface MapPanes {
@@ -954,7 +954,7 @@ declare namespace google.maps {
         getPanel(): Element;
         getRouteIndex(): number;
         setDirections(directions: DirectionsResult): void;
-        setMap(map: Map): void;
+		setMap(map: Map | null): void;
         setOptions(options: DirectionsRendererOptions): void;
         setPanel(panel: Element): void;
         setRouteIndex(routeIndex: number): void;
@@ -1434,13 +1434,13 @@ declare namespace google.maps {
     export class BicyclingLayer extends MVCObject {
         constructor();
         getMap(): Map;
-        setMap(map: Map): void;
+		setMap(map: Map | null): void;
     }
 
     export class FusionTablesLayer extends MVCObject {
         constructor(options: FusionTablesLayerOptions);
         getMap(): Map;
-        setMap(map: Map): void;
+		setMap(map: Map | null): void;
         setOptions(options: FusionTablesLayerOptions): void;
     }
 
@@ -1511,7 +1511,7 @@ declare namespace google.maps {
         getStatus(): KmlLayerStatus;
         getUrl(): string;
         getZIndex(): number;
-        setMap(map: Map): void;
+		setMap(map: Map | null): void;
         setUrl(url: string): void;
         setZIndez(zIndex: number): void;
     }
@@ -1570,13 +1570,13 @@ declare namespace google.maps {
     export class TrafficLayer extends MVCObject {
         constructor();
         getMap(): void;
-        setMap(map: Map): void;
+		setMap(map: Map | null): void;
     }
 
     export class TransitLayer extends MVCObject {
         constructor();
         getMap(): void;
-        setMap(map: Map): void;
+		setMap(map: Map | null): void;
     }
 
     /***** Street View *****/
@@ -1703,7 +1703,7 @@ declare namespace google.maps {
 
     export class StreetViewCoverageLayer extends MVCObject  {
         getMap(): Map;
-        setMap(map: Map): void;
+		setMap(map: Map | null): void;
     }
 
     /***** Events *****/
@@ -1953,7 +1953,7 @@ declare namespace google.maps {
             setBorderColor(borderColor: string): void;
             setChannelNumber(channelNumber: string): void;
             setFormat(format: AdFormat): void;
-            setMap(map: Map): void;
+			setMap(map: Map | null): void;
             setPosition(position: ControlPosition): void;
             setTextColor(textColor: string): void;
             setTitleColor(titleColor: string): void;
@@ -2200,7 +2200,7 @@ declare namespace google.maps {
             getDrawingMode(): OverlayType;
             getMap(): Map;
             setDrawingMode(drawingMode: OverlayType): void;
-            setMap(map: Map): void;
+			setMap(map: Map | null): void;
             setOptions(options: DrawingManagerOptions): void;
         }
 
@@ -2249,7 +2249,7 @@ declare namespace google.maps {
             getZIndex(): number;
             setLayerId(layerId: string): void;
             setLayerKey(layerKey: string): void;
-            setMap(map: Map): void;
+			setMap(map: Map | null): void;
             setMapId(mapId: string): void;
             setOpacity(opacity: number): void;
             setOptions(options: MapsEngineLayerOptions): void;
@@ -2293,7 +2293,7 @@ declare namespace google.maps {
             setData(data: MVCArray): void;
             setData(data: LatLng[]): void;
             setData(data: WeightedLocation[]): void;
-            setMap(map: Map): void;
+			setMap(map: Map | null): void;
         }
 
         export interface HeatmapLayerOptions {
